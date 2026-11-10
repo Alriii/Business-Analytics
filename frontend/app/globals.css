@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f5f7f4;
+  --foreground: #23332a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #dce9de;
+  color: #1d4b34;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #34443a;
+}
+
+.app-content thead tr {
+  border-bottom: 1px solid #e8ede8;
+  background: #f8faf8;
+}
+
+.app-content thead th {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: #738078;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.app-content tbody tr {
+  transition: background-color 120ms ease;
+}
+
+.app-content tbody tr:hover {
+  background: #f8faf8;
+}
+
+.app-content tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.app-content select {
+  min-height: 2.75rem;
+  border: 1px solid #ccd6ce;
+  border-radius: 0.625rem;
+  background-color: white;
+  padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+  color: #24352a;
+  box-shadow: 0 1px 2px rgb(30 56 39 / 3%);
+}
+
+.app-content select:focus-visible {
+  border-color: #3d8059;
+  outline: 2px solid rgb(36 92 64 / 15%);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
