@@ -21,8 +21,9 @@ api.interceptors.request.use((config) => {
     return config;
   }
 
-  const requestUrl = new URL(config.url ?? "", config.baseURL ?? apiBaseUrl);
-  const configuredApiUrl = new URL(apiBaseUrl, window.location.href);
+  const requestBaseUrl = new URL(config.baseURL ?? apiBaseUrl, window.location.origin);
+  const requestUrl = new URL(config.url ?? "", requestBaseUrl);
+  const configuredApiUrl = new URL(apiBaseUrl, window.location.origin);
   if (requestUrl.origin !== configuredApiUrl.origin) {
     return config;
   }
